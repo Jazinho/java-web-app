@@ -39,4 +39,18 @@
         <url-pattern>/about</url-pattern>
     </servlet-mapping>
 
+
+    <servlet>
+        <servlet-name>My JAX-RS Resource</servlet-name>
+        <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+        <init-param>
+            <param-name>com.sun.jersey.config.property.packages</param-name>
+            <param-value>servlets</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>My JAX-RS Resource</servlet-name>
+        <url-pattern>/rest/*</url-pattern>
+    </servlet-mapping>
+
 </web-app>
