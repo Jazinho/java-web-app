@@ -2,6 +2,7 @@
 
 Java Web Application for learning purposes.
 
-Using tomcat8.
+Using SpringBoot for configuration.
+Deployed on tomcat8.
 
 Utility of application hasn't been specified yet.
