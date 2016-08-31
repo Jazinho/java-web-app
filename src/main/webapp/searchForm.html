@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars Searching Form</title>
+</head>
+<body>
+    <form action="http://localhost:8080/cars/search" method="get" id="carform">
+        Upper Price:<br>
+        <input type="text" name="lowerPrice">
+        <br>
+        Lower Price:<br>
+        <input type="text" name="upperPrice">
+        <br><br>
+        Upper Production Year:<br>
+        <input type="text" name="lowerYear">
+        <br>
+        Lower Production Year:<br>
+        <input type="text" name="upperYear">
+        <br><br>
+        Brand:<br>
+        <input type="text" name="brand">
+        <br><br>
+        Car Type:<br>
+        <select form="carform" name="type">
+            <option value="SUV">SUV</option>
+            <option value="COUPE">COUPE</option>
+            <option value="HATCHBACK">HATCHBACK</option>
+            <option value="KOMBI">KOMBI</option>
+            <option value="LIFTBACK">LIFTBACK</option>
+            <option value="LIMUZYNA">LIMUZYNA</option>
+            <option value="MINIVAN">MINIVAN</option>
+            <option value="PICK_UP">PICK_UP</option>
+            <option value="SEDAN">SEDAN</option>
+            <option value="VAN">VAN</option>
+        </select>
+        <br><br>
+        <input type="submit" value="Szukaj">
+    </form>
+</body>
+</html>
