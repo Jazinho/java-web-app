@@ -5,37 +5,43 @@
     <title>Cars Searching Form</title>
 </head>
 <body>
-    <form action="http://localhost:8080/cars/search" method="get" id="carform">
-        Upper Price:<br>
-        <input type="text" name="lowerPrice">
-        <br>
-        Lower Price:<br>
-        <input type="text" name="upperPrice">
-        <br><br>
-        Upper Production Year:<br>
-        <input type="text" name="lowerYear">
-        <br>
-        Lower Production Year:<br>
-        <input type="text" name="upperYear">
-        <br><br>
-        Brand:<br>
-        <input type="text" name="brand">
-        <br><br>
-        Car Type:<br>
-        <select form="carform" name="type">
-            <option value="SUV">SUV</option>
-            <option value="COUPE">COUPE</option>
-            <option value="HATCHBACK">HATCHBACK</option>
-            <option value="KOMBI">KOMBI</option>
-            <option value="LIFTBACK">LIFTBACK</option>
-            <option value="LIMUZYNA">LIMUZYNA</option>
-            <option value="MINIVAN">MINIVAN</option>
-            <option value="PICK_UP">PICK_UP</option>
-            <option value="SEDAN">SEDAN</option>
-            <option value="VAN">VAN</option>
-        </select>
-        <br><br>
-        <input type="submit" value="Szukaj">
-    </form>
+<form action="http://localhost:8080/cars/search" method="get" id="carform">
+    Upper Price (per day):<br>
+    <input type="number" name="upperPrice" min="50" max="1000">
+    <br>
+    Lower Price (per day):<br>
+    <input type="number" name="lowerPrice" min="50" max="1000">
+    <br><br>
+    Upper Production Year:<br>
+    <input type="number" name="upperYear" min="1990" max="2016" value="2000">
+    <br>
+    Lower Production Year:<br>
+    <input type="number" name="lowerYear" min="1990" max="2016" value="2000">
+    <br><br>
+    Upper Bound of Passed Kilometers:<br>
+    <input type="number" name="upperPassedKms" min="0" max="500000" value="100000">
+    <br>
+    Lower Bound of Passed Kilometers:<br>
+    <input type="number" name="lowerPassedKms" min="0" max="500000" value="100000">
+    <br><br>
+    Brand:<br>
+    <input type="text" name="brand">
+    <br><br>
+    Car Type:<br>
+    <select form="carform" name="type">
+        <option value="SUV">SUV</option>
+        <option value="COUPE">COUPE</option>
+        <option value="HATCHBACK">HATCHBACK</option>
+        <option value="KOMBI">KOMBI</option>
+        <option value="LIFTBACK">LIFTBACK</option>
+        <option value="LIMUZYNA">LIMUZYNA</option>
+        <option value="MINIVAN">MINIVAN</option>
+        <option value="PICK_UP">PICK_UP</option>
+        <option value="SEDAN">SEDAN</option>
+        <option value="VAN">VAN</option>
+    </select>
+    <br><br>
+    <input type="submit" value="Szukaj">
+</form>
 </body>
 </html>
