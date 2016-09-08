@@ -1,7 +1,9 @@
 package com.controllers;
 
-import org.springframework.beans.factory.annotation.Value;
+import com.repositories.CarsRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
 
 /**
  * @author Jan Pałucki
@@ -10,6 +12,9 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class CarsController {
+
+    @Autowired
+    protected CarsRepository carsRepository;
 
     @RequestMapping(path = "/cars")
     public String getAllCars() {
@@ -24,12 +29,12 @@ public class CarsController {
     @RequestMapping(path = "/cars/search", method = RequestMethod.GET)
     public String searchCars(@RequestParam("lowerPrice") int lowestPrice, @RequestParam("upperPrice") int highestPrice,
                              @RequestParam("lowerYear") int oldest, @RequestParam("upperYear") int newest,
-                             @RequestParam("brand") String brand, @RequestParam("type") String type){
+                             @RequestParam("brand") String brand, @RequestParam("type") String type) {
         return "Looking for car\n" +
-                "price: "+Integer.toString(lowestPrice)+" - "+Integer.toString(lowestPrice)+"\n"+
-                "year: "+Integer.toString(oldest)+" - "+Integer.toString(newest)+"\n"+
-                "brand: "+brand+
-                "type: "+type;
+                "price: " + Integer.toString(lowestPrice) + " - " + Integer.toString(lowestPrice) + "\n" +
+                "year: " + Integer.toString(oldest) + " - " + Integer.toString(newest) + "\n" +
+                "brand: " + brand +
+                "type: " + type;
     }
 
 }
