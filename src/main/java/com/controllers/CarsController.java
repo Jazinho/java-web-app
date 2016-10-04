@@ -1,6 +1,8 @@
 package com.controllers;
 
+import com.dtos.CarDto;
 import com.repositories.CarsRepository;
+import com.services.CarsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
 public class CarsController {
 
     @Autowired
-    protected CarsRepository carsRepository;
+    protected CarsService carsService;
 
     @RequestMapping(path = "/cars")
     public String getAllCars() {
@@ -22,8 +24,9 @@ public class CarsController {
     }
 
     @RequestMapping(path = "/cars/{uuid}", method = RequestMethod.GET)
-    public String getSingleCar(@PathVariable("uuid") String uuid) {
-        return "Specified car with uuid: " + uuid + " here";
+    public String getSingleCar(@PathVariable("uuid") Long uuid) {
+        CarDto carDto = carsService.getCarWithUuid(uuid);
+        return carDto.toString();
     }
 
     @RequestMapping(path = "/cars/search", method = RequestMethod.GET)

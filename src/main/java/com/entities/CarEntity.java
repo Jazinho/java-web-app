@@ -18,13 +18,13 @@ public class CarEntity {
     @Id
     private Long id;
 
-    @Column(name = "rok_produkcji", nullable = false)
+    @Column(name = "cena", nullable = false)
     private int price;
 
     @Column(name = "rok_produkcji", nullable = false)
     private int productionYear;
 
-    @Column(name = "przejechaneKM", nullable = false)
+    @Column(name = "przejechaneKm", nullable = false)
     private int passedKms;
 
     @Column(name = "marka", nullable = false)
@@ -32,14 +32,6 @@ public class CarEntity {
 
     @Column(name = "typ_samochodu", nullable = false)
     private CarType type;
-
-    public String getModel() {
-        return model;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
-    }
 
     @Column(name = "model", nullable = false)
     private String model;
@@ -52,7 +44,7 @@ public class CarEntity {
         this.id = id;
         this.productionYear = productionYear;
         this.passedKms = passedKms;
-        this.brand = brand;
+        this.brand = marka;
         this.type = type;
         this.model = model;
     }
@@ -97,11 +89,17 @@ public class CarEntity {
         this.brand = marka;
     }
 
-    public CarType getTyp() {
+    public CarType getType() {
         return type;
     }
 
-    public void setTyp(CarType typ) {
-        this.type = typ;
+    public void setType(CarType typ) {this.type = typ;}
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
     }
 }

@@ -1,25 +1,25 @@
 package com.repositories;
 
-import com.dtos.CarDto;
+import com.entities.CarEntity;
 import com.values.CarType;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
-public interface CarsRepository extends CrudRepository<CarDto,Long> {
+public interface CarsRepository extends JpaRepository<CarEntity,Long> {
 
-    public List<CarDto> findByPriceBetween(int price);
+    public List<CarEntity> findByPriceBetween(int price);
 
-    public List<CarDto> findByProductionYear(int productionYear);
+    public List<CarEntity> findByProductionYear(int productionYear);
 
-    public List<CarDto> findByPassedKms(int passedKms);
+    public List<CarEntity> findByPassedKms(int passedKms);
 
-    public List<CarDto> findByBrand(String brand);
+    public List<CarEntity> findByBrand(String brand);
 
-    public List<CarDto> findByType(CarType type);
+    public List<CarEntity> findByType(CarType type);
 
-    public List<CarDto> findByModel(String model);
+    public List<CarEntity> findByModel(String model);
 
 }
